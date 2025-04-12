@@ -17,3 +17,15 @@ let getHumanChoice = () => {
 
 let humanScore = 0;
 let computerScore = 0;
+
+//create logic to play a single round
+
+//determine user choice
+//based on user choice, compare to cpu choice
+//determine winner, increment winner score
+//log winner announcement
+//draw statement at the end to catch ties
+
+let playRound = (humanChoice, computerChoice) => {
+    
+}
