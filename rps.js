@@ -1,7 +1,4 @@
-//Create function getComputerChoice that returns rock, paper, or scissors
 
-
-//return result
 
 let getComputerChoice = () => {
     switch(Math.floor(Math.random() * 3)) {
@@ -14,4 +11,8 @@ let getComputerChoice = () => {
     }
 }
 
-console.log(getComputerChoice());
+
+let getHumanChoice = () => {
+    return prompt('Choose Rock, Paper, or Scissors').toLowerCase();
+}
+
