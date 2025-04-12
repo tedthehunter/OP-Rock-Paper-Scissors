@@ -11,8 +11,9 @@ let getComputerChoice = () => {
     }
 }
 
-
 let getHumanChoice = () => {
     return prompt('Choose Rock, Paper, or Scissors').toLowerCase();
 }
 
+let humanScore = 0;
+let computerScore = 0;
