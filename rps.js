@@ -15,6 +15,8 @@ let getHumanChoice = () => {
     return prompt('Choose Rock, Paper, or Scissors').toLowerCase();
 }
 
+let playGame = () => {
+
 let humanScore = 0;
 let computerScore = 0;
 
@@ -68,7 +70,38 @@ let playRound = (humanChoice, computerChoice) => {
     }
 }
 
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
-
+//Round 1
+let humanSelection = getHumanChoice();
+let computerSelection = getComputerChoice();
 playRound(humanSelection, computerSelection);
+
+//Round 2
+humanSelection = getHumanChoice();
+computerSelection = getComputerChoice();
+playRound(humanSelection, computerSelection);
+
+//Round 3
+humanSelection = getHumanChoice();
+computerSelection = getComputerChoice();
+playRound(humanSelection, computerSelection);
+
+//Round 4
+humanSelection = getHumanChoice();
+computerSelection = getComputerChoice();
+playRound(humanSelection, computerSelection);
+
+//Round 5
+humanSelection = getHumanChoice();
+computerSelection = getComputerChoice();
+playRound(humanSelection, computerSelection);
+
+if (humanScore > computerScore) {
+    console.log(`You win! ${humanScore} rounds to ${computerScore}`);
+} else if (computerScore > humanScore) {
+    console.log(`You lose! ${humanScore} rounds to ${computerScore}`);
+} else {
+    console.log(`Draw! ${humanScore} rounds to ${computerScore}`);
+}
+}
+
+playGame();
