@@ -10,10 +10,6 @@ let getComputerChoice = () => {
     }
 }
 
-let getHumanChoice = () => {
-    return prompt('Choose Rock, Paper, or Scissors').toLowerCase();
-}
-
 let playGame = () => {
 
     let humanScore = 0;
