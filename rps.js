@@ -75,6 +75,12 @@ let playGame = () => {
                 }
                 break;
         }
+        if (humanScore >= 5) {
+            displayResults('You are first to 5 points.  You win!');
+        }
+        else if (computerScore >= 5) {
+            displayResults('The computer beat you to 5 points.  You lose!');
+        }
     }
 
     const buttonDiv = document.createElement('div');
@@ -113,15 +119,6 @@ let playGame = () => {
     resultList.id = 'resultList';
     resultDiv.appendChild(resultList);
     document.body.appendChild(resultDiv);
-
-    //Final Scoring
-    if (humanScore > computerScore) {
-        console.log(`You win! ${humanScore} rounds to ${computerScore}`);
-    } else if (computerScore > humanScore) {
-        console.log(`You lose! ${humanScore} rounds to ${computerScore}`);
-    } else {
-        console.log(`Draw! ${humanScore} rounds to ${computerScore}`);
-    }
 }
 
 playGame();
