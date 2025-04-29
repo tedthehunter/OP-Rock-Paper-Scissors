@@ -70,17 +70,21 @@ let playGame = () => {
         }
     }
 
-    let rockButton = document.createElement('button');
+    const buttonDiv = document.createElement('div');
+    
+    const rockButton = document.createElement('button');
     rockButton.textContent = 'Rock';
-    document.body.appendChild(rockButton);
+    buttonDiv.appendChild(rockButton);
 
-    let paperButton = document.createElement('button');
+    const paperButton = document.createElement('button');
     paperButton.textContent = 'Paper';
-    document.body.appendChild(paperButton);
+    buttonDiv.appendChild(paperButton);
 
-    let scissorsButton = document.createElement('button');
+    const scissorsButton = document.createElement('button');
     scissorsButton.textContent = 'Scissors';
-    document.body.appendChild(scissorsButton);
+    buttonDiv.appendChild(scissorsButton);
+
+    document.body.appendChild(buttonDiv);
 
     //Final Scoring
     if (humanScore > computerScore) {
