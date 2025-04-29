@@ -86,6 +86,10 @@ let playGame = () => {
 
     document.body.appendChild(buttonDiv);
 
+    buttonDiv.addEventListener('click', (event) => {
+        playRound(event.target.textContent.toLowerCase(), getComputerChoice());
+    });
+
     //Final Scoring
     if (humanScore > computerScore) {
         console.log(`You win! ${humanScore} rounds to ${computerScore}`);
