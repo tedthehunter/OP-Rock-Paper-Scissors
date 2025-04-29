@@ -70,6 +70,18 @@ let playGame = () => {
         }
     }
 
+    let rockButton = document.createElement('button');
+    rockButton.textContent = 'Rock';
+    document.body.appendChild(rockButton);
+
+    let paperButton = document.createElement('button');
+    paperButton.textContent = 'Paper';
+    document.body.appendChild(paperButton);
+
+    let scissorsButton = document.createElement('button');
+    scissorsButton.textContent = 'Scissors';
+    document.body.appendChild(scissorsButton);
+
     //Final Scoring
     if (humanScore > computerScore) {
         console.log(`You win! ${humanScore} rounds to ${computerScore}`);
