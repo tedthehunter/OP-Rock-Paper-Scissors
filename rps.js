@@ -15,6 +15,12 @@ let getHumanChoice = () => {
     return prompt('Choose Rock, Paper, or Scissors').toLowerCase();
 }
 
+let displayResults = (roundResults) => {
+    const result = document.createElement('li');
+    result.textContent = roundResults;
+    document.querySelector('#resultList').appendChild(result);
+}
+
 let playGame = () => {
 
     let humanScore = 0;
@@ -26,14 +32,14 @@ let playGame = () => {
                 switch(computerChoice) {
                     case 'scissors':
                         humanScore++;
-                        console.log('You win! Rock beats Scissors.');
+                        displayResults('You win! Rock beats Scissors.');
                         break;
                     case 'paper':
                         computerScore++;
-                        console.log('You lose! Paper beats Rock.');
+                        displayResults('You lose! Paper beats Rock.');
                         break;
                     case 'rock':
-                        console.log('Draw! Play Again!');
+                        displayResults('Draw! Play Again!');
                         break;
                 }
                 break;
@@ -41,14 +47,14 @@ let playGame = () => {
                 switch(computerChoice) {
                     case 'rock':
                         humanScore++;
-                        console.log('You win! Paper beats Rock.');
+                        displayResults('You win! Paper beats Rock.');
                         break;
                     case 'scissors':
                         computerScore++;
-                        console.log('You lose! Scissors beats Paper.');
+                        displayResults('You lose! Scissors beats Paper.');
                         break;
                     case 'paper':
-                        console.log('Draw! Play Again!');
+                        displayResults('Draw! Play Again!');
                         break;
                 }
                 break;
@@ -56,14 +62,14 @@ let playGame = () => {
                 switch(computerChoice) {
                     case 'paper':
                         humanScore++;
-                        console.log('You win! Scissors beats Paper.');
+                        displayResults('You win! Scissors beats Paper.');
                         break;
                     case 'rock':
                         computerScore++;
-                        console.log('You lose! Rock beats Scissors.');
+                        displayResults('You lose! Rock beats Scissors.');
                         break;
                     case 'scissors':
-                        console.log('Draw! Play Again!');
+                        displayResults('Draw! Play Again!');
                         break;
                 }
                 break;
@@ -89,6 +95,12 @@ let playGame = () => {
     buttonDiv.addEventListener('click', (event) => {
         playRound(event.target.textContent.toLowerCase(), getComputerChoice());
     });
+
+    const resultDiv = document.createElement('div');
+    const resultList = document.createElement('ol');
+    resultList.id = 'resultList';
+    resultDiv.appendChild(resultList);
+    document.body.appendChild(resultDiv);
 
     //Final Scoring
     if (humanScore > computerScore) {
