@@ -96,6 +96,15 @@ let playGame = () => {
         playRound(event.target.textContent.toLowerCase(), getComputerChoice());
     });
 
+    const humanScoreDisplay = document.createElement('h4');
+    humanScoreDisplay.textContent = `Player Score: ${humanScore}`;
+
+    const computerScoreDisplay = document.createElement('h4');
+    computerScoreDisplay.textContent = `Computer Score: ${computerScore}`;
+
+    document.body.appendChild(humanScoreDisplay);
+    document.body.appendChild(computerScoreDisplay);
+
     const resultDiv = document.createElement('div');
     const resultList = document.createElement('ol');
     resultList.id = 'resultList';
