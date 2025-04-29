@@ -1,5 +1,4 @@
 
-
 let getComputerChoice = () => {
     switch(Math.floor(Math.random() * 3)) {
         case 0:
@@ -15,16 +14,18 @@ let getHumanChoice = () => {
     return prompt('Choose Rock, Paper, or Scissors').toLowerCase();
 }
 
-let displayResults = (roundResults) => {
-    const result = document.createElement('li');
-    result.textContent = roundResults;
-    document.querySelector('#resultList').appendChild(result);
-}
-
 let playGame = () => {
 
     let humanScore = 0;
     let computerScore = 0;
+
+    let displayResults = (roundResults) => {
+        const result = document.createElement('li');
+        result.textContent = roundResults;
+        document.querySelector('#resultList').appendChild(result);
+        document.querySelector('#humanScore').textContent = `Player Score: ${humanScore}`;
+        document.querySelector('#computerScore').textContent = `Computer Score: ${computerScore}`;
+    }
 
     let playRound = (humanChoice, computerChoice) => {
         switch(humanChoice) {
@@ -98,9 +99,11 @@ let playGame = () => {
 
     const humanScoreDisplay = document.createElement('h4');
     humanScoreDisplay.textContent = `Player Score: ${humanScore}`;
+    humanScoreDisplay.id = 'humanScore';
 
     const computerScoreDisplay = document.createElement('h4');
     computerScoreDisplay.textContent = `Computer Score: ${computerScore}`;
+    computerScoreDisplay.id = 'computerScore';
 
     document.body.appendChild(humanScoreDisplay);
     document.body.appendChild(computerScoreDisplay);
